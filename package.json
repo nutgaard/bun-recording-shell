@@ -26,7 +26,7 @@
 		"prepublishOnly": "bun run lint && bun run typecheck && bun run test && bun run build",
 		"changeset": "changeset",
 		"version": "changeset version",
-		"release": "bun run build && npm publish --provenance --access public"
+		"release": "bun run build && bun run ./scripts/release.ts"
 	},
 	"keywords": [
 		"bun",
