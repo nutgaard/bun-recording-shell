@@ -1,5 +1,11 @@
 # @nutgaard/bun-recording-shell
 
+## 0.0.2
+
+### Patch Changes
+
+- 9c28996: Split shell internals into focused modules
+
 ## 0.0.1
 
 ### Patch Changes
