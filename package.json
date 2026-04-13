@@ -1,0 +1,60 @@
+{
+	"name": "@nutgaard/bun-recording-shell",
+	"version": "0.0.0",
+	"description": "Record and replay Bun shell invocations for deterministic tests.",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/shell.d.ts",
+			"default": "./dist/shell.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "bunup",
+		"dev": "bunup --watch",
+		"lint": "biome check biome.json bunup.config.ts eslint.config.ts src package.json tsconfig.json README.md .changeset && eslint src/",
+		"lint:fix": "biome check --write biome.json bunup.config.ts eslint.config.ts src package.json tsconfig.json README.md .changeset && eslint src/ --fix",
+		"format": "biome format --write biome.json bunup.config.ts eslint.config.ts src package.json tsconfig.json README.md .changeset",
+		"typecheck": "tsc --noEmit",
+		"test": "bun test",
+		"test:watch": "bun test --watch",
+		"test:coverage": "bun test --coverage",
+		"prepublishOnly": "bun run lint && bun run typecheck && bun run test && bun run build",
+		"changeset": "changeset",
+		"version": "changeset version",
+		"release": "bun run build && npm publish --provenance --access public"
+	},
+	"keywords": [
+		"bun",
+		"shell",
+		"testing",
+		"recording",
+		"replay"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nutgaard/bun-recording-shell.git"
+	},
+	"author": "Nicklas Utgaard",
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"engines": {
+		"node": ">=20.19.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.2.0",
+		"@changesets/cli": "^2.29.6",
+		"bun-types": "^1.3.1",
+		"bunup": "^0.5.1",
+		"eslint": "^9.35.0",
+		"jiti": "^2.4.2",
+		"typescript": "^5.9.2",
+		"typescript-eslint": "^8.42.0"
+	}
+}

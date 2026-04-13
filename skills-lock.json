@@ -1,0 +1,15 @@
+{
+	"version": 1,
+	"skills": {
+		"bun-development": {
+			"source": "sickn33/antigravity-awesome-skills",
+			"sourceType": "github",
+			"computedHash": "d36e22683b65b676c4bd1503320dd7d3e3e3522593325666801e56465cbd817d"
+		},
+		"npm-package": {
+			"source": "jwynia/agent-skills",
+			"sourceType": "github",
+			"computedHash": "2c66260f5e3220e9714f708833203d0313021c4d27c3aa006c9c35c7f7d6cb22"
+		}
+	}
+}
